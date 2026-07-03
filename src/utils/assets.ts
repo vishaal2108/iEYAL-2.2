@@ -1,9 +1,9 @@
 // Automatically import all company assets using Vite's import.meta.glob
-const kiboGlob = import.meta.glob('../../assets/kibo/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
-const customersGlob = import.meta.glob('../../assets/customers/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
-const logosGlob = import.meta.glob('../../assets/logo/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
-const foundersGlob = import.meta.glob('../../assets/founders/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
-const productsGlob = import.meta.glob('../../assets/products/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
+const kiboGlob = import.meta.glob('../assets/kibo/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
+const customersGlob = import.meta.glob('../assets/customers/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
+const logosGlob = import.meta.glob('../assets/logo/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
+const foundersGlob = import.meta.glob('../assets/founders/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
+const productsGlob = import.meta.glob('../assets/products/*.{jpeg,jpg,png}', { eager: true, import: 'default' }) as Record<string, string>;
 
 // Helper to safely find image by substring match
 const findImg = (globObj: Record<string, string>, keyword: string): string => {
