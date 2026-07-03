@@ -1,4 +1,5 @@
 import { Milestone, BlogPost, CaseStudy } from '@/types';
+import { CUSTOMER_LOGOS_MAP } from '@/utils/assets';
 
 export const MILESTONES_CONFIG: Milestone[] = [
   {
@@ -111,7 +112,7 @@ export const CASE_STUDIES_CONFIG: CaseStudy[] = [
     slug: "kurinji-retails-whatsapp-automation",
     client: "Kurinji Retails",
     industry: "Retail & D2C",
-    logo: "/assets/customers/imgi_47_Kurinji Retails.png",
+    logo: CUSTOMER_LOGOS_MAP.kurinji,
     headline: "How Kurinji Retails Achieved 4.2x ROI on WhatsApp Broadcast Campaigns",
     metrics: [
       { label: "Campaign Open Rate", value: "96.4%" },
@@ -131,7 +132,7 @@ export const CASE_STUDIES_CONFIG: CaseStudy[] = [
     slug: "zam-zam-restaurant-direct-ordering",
     client: "Zam Zam Restaurant Chain",
     industry: "Restaurants & Food",
-    logo: "/assets/customers/imgi_57_Zam Zam.png",
+    logo: CUSTOMER_LOGOS_MAP.zamzam,
     headline: "Zam Zam Cuts Third-Party Aggregator Commissions by 30% with Owncart",
     metrics: [
       { label: "Commission Saved", value: "100%" },
@@ -151,7 +152,7 @@ export const CASE_STUDIES_CONFIG: CaseStudy[] = [
     slug: "roshan-bags-omnichannel-loyalty",
     client: "Roshan Bags",
     industry: "Retail & Commerce",
-    logo: "/assets/customers/imgi_52_Roshan Bags.png",
+    logo: CUSTOMER_LOGOS_MAP.roshan,
     headline: "Roshan Bags Unifies Offline Store and Online WhatsApp Orders with One Loyalty Wallet",
     metrics: [
       { label: "Customer Enrollment", value: "14,000+" },

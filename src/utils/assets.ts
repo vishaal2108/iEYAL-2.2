@@ -21,6 +21,12 @@ export const BRAND_LOGOS = {
 
 export const CUSTOMER_LOGOS = Object.values(customersGlob);
 
+export const CUSTOMER_LOGOS_MAP = {
+  kurinji: findImg(customersGlob, 'kurinji') || '/assets/customers/imgi_47_Kurinji Retails.png',
+  zamzam: findImg(customersGlob, 'zam') || '/assets/customers/imgi_57_Zam Zam.png',
+  roshan: findImg(customersGlob, 'roshan') || '/assets/customers/imgi_52_Roshan Bags.png',
+};
+
 export const FOUNDER_IMAGES = {
   dinesh: findImg(foundersGlob, 'dinesh') || '/assets/founders/dinesh-kumar.jpeg',
   haje: findImg(foundersGlob, 'haje') || '/assets/founders/haje-abudhahir.jpeg',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { SITE_CONFIG } from '@/config/site';
+import { BRAND_LOGOS } from '@/utils/assets';
 
 export interface SEOProps {
   title?: string;
@@ -17,7 +18,7 @@ export const SEO: React.FC<SEOProps> = ({
   description = SITE_CONFIG.description,
   keywords = "WhatsApp CRM, WhatsApp automation, WhatsApp store builder, SMB SaaS India, Shopify alternative India, WhatsApp loyalty program",
   canonicalUrl,
-  ogImage = `${SITE_CONFIG.url}/assets/logo/logo.png`,
+  ogImage = `${SITE_CONFIG.url}${BRAND_LOGOS.main}`,
   ogType = 'website',
   schema,
 }) => {
@@ -30,7 +31,7 @@ export const SEO: React.FC<SEOProps> = ({
     "name": SITE_CONFIG.name,
     "alternateName": SITE_CONFIG.shortName,
     "url": SITE_CONFIG.url,
-    "logo": `${SITE_CONFIG.url}/assets/logo/icon.png`,
+    "logo": `${SITE_CONFIG.url}${BRAND_LOGOS.icon}`,
     "description": SITE_CONFIG.description,
     "address": {
       "@type": "PostalAddress",
