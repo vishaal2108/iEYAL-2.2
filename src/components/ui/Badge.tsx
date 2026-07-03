@@ -3,7 +3,7 @@ import { cn } from '@/utils/cn';
 
 export interface BadgeProps {
   children: React.ReactNode;
-  variant?: 'indigo' | 'violet' | 'cyan' | 'wa' | 'outline' | 'live';
+  variant?: 'indigo' | 'violet' | 'cyan' | 'wa' | 'outline' | 'live' | 'emerald';
   size?: 'sm' | 'md';
   className?: string;
   pulse?: boolean;
@@ -25,6 +25,7 @@ export const Badge: React.FC<BadgeProps> = ({
     wa: "bg-wa-green/15 text-[#3ee87a] border border-wa-green/30",
     outline: "bg-white/[0.04] text-text-dim border border-white/10",
     live: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold",
+    emerald: "bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-semibold",
   };
 
   const sizes = {

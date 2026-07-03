@@ -11,13 +11,21 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
-    minify: 'esbuild',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'react-helmet-async'],
-          motion: ['framer-motion'],
-          icons: ['lucide-react'],
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('react-router-dom') || id.includes('react-helmet-async')) {
+              return 'vendor';
+            }
+            if (id.includes('framer-motion')) {
+              return 'motion';
+            }
+            if (id.includes('lucide-react')) {
+              return 'icons';
+            }
+            return 'deps';
+          }
         },
       },
     },
