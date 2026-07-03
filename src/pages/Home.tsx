@@ -13,6 +13,64 @@ import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { Badge } from '@/components/ui/Badge';
 import { PRODUCTS_CONFIG } from '@/config/products';
+import { cn } from '@/utils/cn';
+
+const PILLAR_STYLES: Record<string, {
+  bgGradient: string;
+  borderColor: string;
+  shadowColor: string;
+  accentColor: string;
+  badgeBg: string;
+  orbColor1: string;
+  orbColor2: string;
+  orbColor3: string;
+  icon: React.ReactNode;
+}> = {
+  ownchat: {
+    bgGradient: "from-[#052e1b] via-[#041c10] to-[#030d08]", // Emerald / Green Glow
+    borderColor: "border-[#10b981]/40 group-hover:border-[#10b981]/70",
+    shadowColor: "shadow-[0_15px_45px_-10px_rgba(16,185,129,0.25)] group-hover:shadow-[0_20px_60px_-5px_rgba(16,185,129,0.45)]",
+    accentColor: "text-[#34d399]",
+    badgeBg: "bg-[#10b981]/20 text-[#34d399] border border-[#10b981]/40",
+    orbColor1: "bg-[#10b981]/[0.05] border-[#10b981]/[0.12]",
+    orbColor2: "bg-[#10b981]/[0.08] border-[#10b981]/[0.20]",
+    orbColor3: "bg-[#10b981]/[0.15] border-[#10b981]/[0.35]",
+    icon: <MessageCircle className="w-8 h-8 text-[#34d399]" />,
+  },
+  owncart: {
+    bgGradient: "from-[#141842] via-[#0b0e26] to-[#050612]", // Indigo / Blue Glow
+    borderColor: "border-[#5b6bff]/40 group-hover:border-[#5b6bff]/70",
+    shadowColor: "shadow-[0_15px_45px_-10px_rgba(91,107,255,0.25)] group-hover:shadow-[0_20px_60px_-5px_rgba(91,107,255,0.45)]",
+    accentColor: "text-[#8b6bff]",
+    badgeBg: "bg-[#5b6bff]/20 text-[#8b6bff] border border-[#5b6bff]/40",
+    orbColor1: "bg-[#5b6bff]/[0.05] border-[#5b6bff]/[0.12]",
+    orbColor2: "bg-[#5b6bff]/[0.08] border-[#5b6bff]/[0.20]",
+    orbColor3: "bg-[#5b6bff]/[0.15] border-[#5b6bff]/[0.35]",
+    icon: <ShoppingBag className="w-8 h-8 text-[#8b6bff]" />,
+  },
+  ownrewards: {
+    bgGradient: "from-[#2c1342] via-[#180a24] to-[#0b0410]", // Violet / Purple Glow
+    borderColor: "border-[#a855f7]/40 group-hover:border-[#a855f7]/70",
+    shadowColor: "shadow-[0_15px_45px_-10px_rgba(168,85,247,0.25)] group-hover:shadow-[0_20px_60px_-5px_rgba(168,85,247,0.45)]",
+    accentColor: "text-[#c084fc]",
+    badgeBg: "bg-[#a855f7]/20 text-[#c084fc] border border-[#a855f7]/40",
+    orbColor1: "bg-[#a855f7]/[0.05] border-[#a855f7]/[0.12]",
+    orbColor2: "bg-[#a855f7]/[0.08] border-[#a855f7]/[0.20]",
+    orbColor3: "bg-[#a855f7]/[0.15] border-[#a855f7]/[0.35]",
+    icon: <Zap className="w-8 h-8 text-[#c084fc]" />,
+  },
+  owntask: {
+    bgGradient: "from-[#381e0a] via-[#1f1005] to-[#0e0702]", // Amber / Gold Glow
+    borderColor: "border-[#f59e0b]/40 group-hover:border-[#f59e0b]/70",
+    shadowColor: "shadow-[0_15px_45px_-10px_rgba(245,158,11,0.25)] group-hover:shadow-[0_20px_60px_-5px_rgba(245,158,11,0.45)]",
+    accentColor: "text-[#fbbf24]",
+    badgeBg: "bg-[#f59e0b]/20 text-[#fbbf24] border border-[#f59e0b]/40",
+    orbColor1: "bg-[#f59e0b]/[0.05] border-[#f59e0b]/[0.12]",
+    orbColor2: "bg-[#f59e0b]/[0.08] border-[#f59e0b]/[0.20]",
+    orbColor3: "bg-[#f59e0b]/[0.15] border-[#f59e0b]/[0.35]",
+    icon: <CheckCheck className="w-8 h-8 text-[#fbbf24]" />,
+  },
+};
 
 export const Home: React.FC = () => {
   return (
@@ -232,42 +290,83 @@ export const Home: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {PRODUCTS_CONFIG.map((prod) => (
-              <Card key={prod.id} variant="glass" className="flex flex-col justify-between h-full group border-white/[0.08] hover:border-indigo/40">
-                <div>
-                  <div className="flex items-center justify-between gap-4 mb-4">
-                    <span className="text-2xl font-display font-bold text-paper group-hover:text-indigo-2 transition-colors">
-                      {prod.name}
-                    </span>
-                    <Badge variant={prod.status === 'Live' ? 'live' : 'outline'} size="sm">
-                      {prod.badge}
-                    </Badge>
+            {PRODUCTS_CONFIG.map((prod) => {
+              const style = PILLAR_STYLES[prod.id] || PILLAR_STYLES.ownchat;
+
+              return (
+                <div
+                  key={prod.id}
+                  className={cn(
+                    "relative rounded-[28px] p-6 sm:p-8 md:p-10 overflow-hidden border transition-all duration-500 group flex flex-col justify-between h-full bg-gradient-to-br backdrop-blur-xl",
+                    style.bgGradient,
+                    style.borderColor,
+                    style.shadowColor
+                  )}
+                >
+                  {/* Concentric Glass Orbs / Depth Cues (inspired by reference) */}
+                  <div className="absolute top-0 right-0 pointer-events-none z-0">
+                    <div className={cn("absolute -top-24 -right-24 w-64 h-64 rounded-full border transition-transform duration-700 group-hover:scale-110", style.orbColor1)} />
+                    <div className={cn("absolute -top-14 -right-14 w-44 h-44 rounded-full border transition-transform duration-700 group-hover:scale-110", style.orbColor2)} />
+                    <div className={cn("absolute -top-6 -right-6 w-24 h-24 rounded-full border flex items-center justify-center shadow-lg transition-transform duration-700 group-hover:scale-110", style.orbColor3)}>
+                      {style.icon}
+                    </div>
                   </div>
 
-                  <p className="text-sm sm:text-base text-text-dim mb-6 leading-relaxed">
-                    {prod.description}
-                  </p>
+                  {/* Top Content Area */}
+                  <div className="relative z-10">
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pr-16">
+                      <span className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight">
+                        {prod.name}
+                      </span>
+                      <span className={cn("text-xs px-3 py-1 rounded-full font-semibold tracking-wide uppercase", style.badgeBg)}>
+                        {prod.badge}
+                      </span>
+                    </div>
 
-                  <div className="space-y-2.5 mb-8">
-                    {prod.features.slice(0, 3).map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-text">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <span>{feat.title}</span>
+                    <p className="text-sm sm:text-base text-text-dim mb-8 leading-relaxed max-w-lg">
+                      {prod.description}
+                    </p>
+
+                    <div className="space-y-3 mb-10">
+                      {prod.features.slice(0, 3).map((feat, idx) => (
+                        <div key={idx} className="flex items-center gap-3 text-xs sm:text-sm text-paper font-medium">
+                          <CheckCircle2 className={cn("w-4 h-4 shrink-0", style.accentColor)} />
+                          <span>{feat.title}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Action Footer (inspired by reference pill buttons & OPEN link) */}
+                  <div className="relative z-10 pt-6 border-t border-white/[0.08] flex items-center justify-between gap-4">
+                    {/* Bottom Left Pill Icons */}
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-full bg-white text-ink flex items-center justify-center shadow-md hover:scale-110 transition-transform" title="WhatsApp Native Integration">
+                        <MessageCircle className="w-4 h-4 text-[#25d366] fill-[#25d366]/20" />
                       </div>
-                    ))}
+                      <div className="w-8 h-8 rounded-full bg-white text-ink flex items-center justify-center shadow-md hover:scale-110 transition-transform" title="AI Assistant Powered">
+                        <Zap className="w-4 h-4 text-[#8b6bff] fill-[#8b6bff]/20" />
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-white text-ink flex items-center justify-center shadow-md hover:scale-110 transition-transform" title="DPIIT Recognized Security">
+                        <ShieldCheck className="w-4 h-4 text-[#10b981]" />
+                      </div>
+                    </div>
+
+                    {/* Bottom Right Explore Link */}
+                    <Link
+                      to={prod.href}
+                      className={cn(
+                        "inline-flex items-center gap-2 font-display font-bold text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 group/link py-2.5 px-5 rounded-xl bg-white/[0.06] hover:bg-white/[0.14] border border-white/[0.12] shadow-sm",
+                        style.accentColor
+                      )}
+                    >
+                      <span>EXPLORE DETAILS</span>
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1.5" />
+                    </Link>
                   </div>
                 </div>
-
-                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
-                  <Link to={prod.href} className="w-full">
-                    <Button variant="secondary" className="w-full justify-between group/btn">
-                      <span>Explore {prod.name} Details</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                    </Button>
-                  </Link>
-                </div>
-              </Card>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
