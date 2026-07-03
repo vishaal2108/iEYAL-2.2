@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
           <div className="relative w-full max-w-[340px] sm:max-w-[360px] mx-auto lg:ml-auto">
             {/* Ambient Background Glow */}
             <div className="absolute -inset-6 bg-gradient-to-tr from-emerald-500/20 via-indigo/30 to-cyan/20 rounded-[3.5rem] blur-2xl -z-10 animate-pulse-slow" />
-            
+
             {/* Mobile Phone Chassis */}
             <div className="bg-[#0c1015] border-[6px] border-[#1e2530] rounded-[2.8rem] shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9),0_0_35px_rgba(34,197,94,0.15)] relative overflow-hidden flex flex-col ring-1 ring-white/20">
               {/* Hardware Side Buttons Simulation */}
@@ -146,7 +146,7 @@ export const Home: React.FC = () => {
                   </div>
                   <div className="bg-[#202c33] text-[#e9edef] rounded-2xl rounded-bl-none p-3 max-w-[88%] shadow-md border border-white/[0.04] space-y-2.5">
                     <p>🛍️ Here is our interactive WhatsApp store! You can check out directly with UPI without leaving this chat.</p>
-                    
+
                     {/* Interactive Store Item Box */}
                     <div className="p-2.5 rounded-xl bg-[#111b21] border border-white/[0.08] flex items-center justify-between gap-3 shadow-inner">
                       <div className="flex items-center gap-2.5">

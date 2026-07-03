@@ -29,14 +29,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   centered = false,
 }) => {
   return (
-    <section className={cn("relative pt-24 sm:pt-32 pb-16 md:pb-24 overflow-hidden", className)}>
+    <section className={cn("relative pt-20 sm:pt-24 pb-8 md:pb-12 overflow-hidden min-h-screen flex items-center justify-center", className)}>
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-indigo/20 via-violet/25 to-cyan/15 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-violet-deep/40 rounded-full blur-[100px] pointer-events-none -z-10" />
 
-      <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className={cn(
-          "grid gap-12 lg:gap-16 items-center",
+          "grid gap-8 lg:gap-10 items-center",
           visual && !centered ? "grid-cols-1 lg:grid-cols-12" : "grid-cols-1 text-center max-w-4xl mx-auto"
         )}>
           {/* Content side */}
@@ -44,7 +44,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             initial={{ opacity: 0, translateY: 20 }}
             animate={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className={cn("space-y-6 sm:space-y-8", visual && !centered ? "lg:col-span-7" : "")}
+            className={cn("space-y-4 sm:space-y-5", visual && !centered ? "lg:col-span-7" : "")}
           >
             {badge && (
               <div className={cn(centered ? "flex justify-center" : "")}>
@@ -75,7 +75,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             )}
 
             {trustStrip && (
-              <div className={cn("pt-6 border-t border-white/[0.08]", centered ? "flex justify-center" : "")}>
+              <div className={cn("pt-4 border-t border-white/[0.08]", centered ? "flex justify-center" : "")}>
                 {trustStrip}
               </div>
             )}
