@@ -101,7 +101,7 @@ export const Footer: React.FC<{ onOpenDemo: () => void }> = ({ onOpenDemo }) => 
             </div>
           </div>
 
-          {/* Columns 2 to 4: Nav Links */}
+          {/* Columns 2 to 5: Nav Links */}
           {FOOTER_COLUMNS.map((col) => (
             <div key={col.title} className="space-y-3">
               <h4 className="font-display font-semibold text-sm text-paper uppercase tracking-wider">
@@ -129,24 +129,67 @@ export const Footer: React.FC<{ onOpenDemo: () => void }> = ({ onOpenDemo }) => 
               </ul>
             </div>
           ))}
+        </div>
 
-          {/* Column 5: Get Started CTA */}
-          <div className="space-y-4">
-            <h4 className="font-display font-semibold text-sm text-paper uppercase tracking-wider">
-              Get Started
-            </h4>
-            <p className="text-xs text-text-dim leading-relaxed">
+        {/* Bottom Row: Get Started CTA & Office Location Map */}
+        <div className="mt-12 pt-10 border-t border-white/[0.08] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          {/* Get Started CTA (Left side - Col 1 to 4) */}
+          <div className="lg:col-span-4 space-y-4 max-w-sm">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <h4 className="font-display font-semibold text-sm text-paper uppercase tracking-wider">
+                Get Started
+              </h4>
+            </div>
+            <p className="text-xs sm:text-sm text-text-dim leading-relaxed">
               Ready to automate your customer journey on WhatsApp?
             </p>
-            <div className="space-y-2.5 pt-1">
+            <div className="flex flex-col sm:flex-row lg:flex-col gap-2.5 pt-1">
               <Button variant="glow" size="sm" className="w-full" onClick={onOpenDemo}>
                 Book a Demo
               </Button>
-              <Link to="/contact" className="block">
+              <Link to="/contact" className="block w-full">
                 <Button variant="secondary" size="sm" className="w-full">
                   Talk to Sales Team
                 </Button>
               </Link>
+            </div>
+          </div>
+
+          {/* Interactive Google Map (Bottom Right Corner - Col 5 to 12) */}
+          <div className="lg:col-span-8 w-full">
+            <div className="relative rounded-2xl border border-white/[0.12] bg-ink-3/50 p-2 sm:p-2.5 shadow-2xl backdrop-blur-md group hover:border-indigo/40 transition-all duration-300">
+              {/* Map Header Tag */}
+              <div className="flex items-center justify-between mb-2 px-2 text-xs">
+                <span className="flex items-center gap-1.5 font-medium text-paper">
+                  <MapPin className="w-3.5 h-3.5 text-indigo-2 animate-bounce" />
+                  <span>iEYAL Solutions Headquarters — Thiruvarur</span>
+                </span>
+                <a
+                  href={SITE_CONFIG.contact.googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] text-indigo-2 hover:text-indigo-3 underline font-medium flex items-center gap-1 transition-colors"
+                >
+                  <span>Open in Google Maps</span>
+                  <span className="text-xs">↗</span>
+                </a>
+              </div>
+
+              {/* Map iFrame */}
+              <div className="w-full h-[200px] sm:h-[220px] md:h-[240px] rounded-xl overflow-hidden relative border border-white/[0.06]">
+                <iframe
+                  title="iEYAL Solutions Office Location - Thiruvarur"
+                  src="https://www.google.com/maps?q=80/5,+Nethaji+Road,+Thiruvarur,+Tamil+Nadu,+India&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen={false}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full filter contrast-[1.05] saturate-[1.1] transition-all duration-500 group-hover:filter-none"
+                />
+              </div>
             </div>
           </div>
         </div>
