@@ -53,7 +53,7 @@ export const ProductDetail: React.FC = () => {
                 Book {product.name} Walkthrough
               </Button>
             </Link>
-            <a href="https://wa.me/918050000000" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/9791467587" target="_blank" rel="noopener noreferrer">
               <Button variant="wa" size="lg" icon={<MessageCircle className="w-5 h-5" />}>
                 Try Live on WhatsApp
               </Button>

@@ -8,7 +8,7 @@ export const SITE_CONFIG = {
   contact: {
     email: "sales@ieyalsolutions.com",
     supportEmail: "support@ieyalsolutions.com",
-    phone: "+91 80 5000 0000", // Authoritative contact format from info/content
+    phone: "+91 97914 67587", // Official iEYAL contact number
     address: "80/5, Nethaji Road, Thiruvarur, Tamil Nadu, India",
     googleMapsUrl: "https://maps.google.com/?q=80/5,+Nethaji+Road,+Thiruvarur,+Tamil+Nadu",
   },

@@ -39,12 +39,12 @@ export const CTASection: React.FC<CTASectionProps> = ({
           {/* Ambient lighting inside CTA box */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-indigo/20 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan/15 rounded-full blur-3xl pointer-events-none" />
-          
+
           <div className="relative z-10 max-w-3xl mx-auto space-y-6">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-paper tracking-tight">
               {heading}
             </h2>
-            
+
             <p className="text-base sm:text-lg lg:text-xl text-text-dim leading-relaxed">
               {subheading}
             </p>
@@ -55,9 +55,9 @@ export const CTASection: React.FC<CTASectionProps> = ({
                   {primaryBtnText}
                 </Button>
               </Link>
-              
+
               {showWaButton ? (
-                <a href="https://wa.me/918050000000" target="_blank" rel="noopener noreferrer">
+                <a href="https://wa.me/9791467587" target="_blank" rel="noopener noreferrer">
                   <Button variant="wa" size="lg" icon={<MessageCircle className="w-5 h-5" />}>
                     Chat on WhatsApp
                   </Button>

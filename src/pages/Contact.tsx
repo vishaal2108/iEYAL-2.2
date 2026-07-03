@@ -63,9 +63,9 @@ export const Contact: React.FC = () => {
               <p className="text-xs text-text-dim">
                 Chat with our AI assistant Kibo or request immediate human handover to our engineering leads.
               </p>
-              <a href="https://wa.me/918050000000" target="_blank" rel="noopener noreferrer" className="block">
+              <a href="https://wa.me/919791467587" target="_blank" rel="noopener noreferrer" className="block">
                 <Button variant="wa" className="w-full" icon={<MessageCircle className="w-4 h-4" />}>
-                  Chat on WhatsApp (+91 80 5000 0000)
+                  Chat on WhatsApp ({SITE_CONFIG.contact.phone})
                 </Button>
               </a>
             </Card>

@@ -19,8 +19,8 @@ export const HelpCenter: React.FC = () => {
     { question: "What happens if our internet connection goes down?", answer: "Because iEYAL runs on cloud microservices and Meta Business infrastructure, your automated AI chatbots and customer ordering flows stay 100% online even if your shop's local wifi disconnects." },
   ];
 
-  const filteredFaqs = helpFaqs.filter(f => 
-    f.question.toLowerCase().includes(query.toLowerCase()) || 
+  const filteredFaqs = helpFaqs.filter(f =>
+    f.question.toLowerCase().includes(query.toLowerCase()) ||
     f.answer.toLowerCase().includes(query.toLowerCase())
   );
 
@@ -66,7 +66,7 @@ export const HelpCenter: React.FC = () => {
         ) : (
           <Card variant="glass" className="p-8 text-center space-y-4">
             <p className="text-base text-text-dim">No matching FAQs found for "{query}".</p>
-            <a href="https://wa.me/918050000000" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/9791467587" target="_blank" rel="noopener noreferrer">
               <Button variant="wa" icon={<MessageCircle className="w-4 h-4" />}>Ask Live Support on WhatsApp</Button>
             </a>
           </Card>
@@ -77,7 +77,7 @@ export const HelpCenter: React.FC = () => {
         heading="Still Need Human Assistance?"
         subheading="Our technical support team is online and ready to troubleshoot your configuration."
         primaryBtnText="Chat with Support on WhatsApp"
-        primaryBtnHref="https://wa.me/918050000000"
+        primaryBtnHref="https://wa.me/9791467587"
         showWaButton={true}
       />
     </>
