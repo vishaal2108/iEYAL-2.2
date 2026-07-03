@@ -387,30 +387,32 @@ export const Home: React.FC = () => {
                 Most global SaaS platforms are priced in dollars and designed for Western workflows. iEYAL was born in Thiruvarur, Tamil Nadu, with a relentless focus on high-speed mobile commerce, zero-latency WhatsApp messaging, and affordable scalability.
               </p>
 
-              <div className="space-y-4 pt-2">
-                <div className="p-4 rounded-m bg-white/[0.03] border border-white/[0.08] flex gap-4 items-start">
-                  <div className="p-2.5 rounded-full bg-indigo/20 text-indigo-2 shrink-0 mt-0.5">
-                    <TrendingUp className="w-5 h-5" />
+              <div className="space-y-5 pt-3">
+                {/* Card 1: Emerald / Green Illuminated Card */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#052e1b]/90 via-[#041c10]/80 to-[#030d08]/90 border border-[#10b981]/40 shadow-[0_10px_35px_-10px_rgba(16,185,129,0.25)] hover:border-[#10b981]/80 hover:shadow-[0_15px_45px_-5px_rgba(16,185,129,0.4)] transition-all duration-300 group relative overflow-hidden flex gap-5 items-start backdrop-blur-xl">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#059669] to-[#047857] border border-[#34d399]/40 shadow-[0_0_20px_rgba(5,150,105,0.5)] flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <TrendingUp className="w-6 h-6 drop-shadow-md" />
                   </div>
                   <div>
-                    <h3 className="font-display font-semibold text-paper text-base mb-1">
+                    <h3 className="font-display font-bold text-white text-lg mb-1.5 group-hover:text-[#34d399] transition-colors">
                       Eliminate 30% Aggregator Commissions
                     </h3>
-                    <p className="text-sm text-text-dim">
+                    <p className="text-sm text-text-dim leading-relaxed">
                       Own your customer data and stop paying third-party delivery apps or marketplaces a cut of every single transaction.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-4 rounded-m bg-white/[0.03] border border-white/[0.08] flex gap-4 items-start">
-                  <div className="p-2.5 rounded-full bg-cyan/20 text-cyan shrink-0 mt-0.5">
-                    <Cpu className="w-5 h-5" />
+                {/* Card 2: Indigo / Blue Illuminated Card */}
+                <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-[#0a1026]/90 via-[#070b1a]/80 to-[#04060f]/90 border border-[#3b82f6]/40 shadow-[0_10px_35px_-10px_rgba(59,130,246,0.25)] hover:border-[#3b82f6]/80 hover:shadow-[0_15px_45px_-5px_rgba(59,130,246,0.4)] transition-all duration-300 group relative overflow-hidden flex gap-5 items-start backdrop-blur-xl">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2563eb] to-[#1d4ed8] border border-[#60a5fa]/40 shadow-[0_0_20px_rgba(37,99,235,0.5)] flex items-center justify-center text-white shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <Cpu className="w-6 h-6 drop-shadow-md" />
                   </div>
                   <div>
-                    <h3 className="font-display font-semibold text-paper text-base mb-1">
+                    <h3 className="font-display font-bold text-white text-lg mb-1.5 group-hover:text-[#60a5fa] transition-colors">
                       100% In-House Engineering & UI/UX
                     </h3>
-                    <p className="text-sm text-text-dim">
+                    <p className="text-sm text-text-dim leading-relaxed">
                       We never outsource code or support. Our 22+ specialist team ships updates rapidly based on real feedback from 200+ paying businesses.
                     </p>
                   </div>
@@ -419,7 +421,7 @@ export const Home: React.FC = () => {
 
               <div className="pt-4">
                 <Link to="/company/about">
-                  <Button variant="outline" icon={<ArrowRight className="w-4 h-4" />}>
+                  <Button variant="glow" icon={<ArrowRight className="w-4 h-4" />}>
                     Read Our Tier-3 Town Founder Story
                   </Button>
                 </Link>
@@ -427,15 +429,24 @@ export const Home: React.FC = () => {
             </div>
 
             <div className="lg:col-span-6 flex justify-center">
-              <Card variant="glow" className="w-full max-w-lg p-8 text-center space-y-6">
-                <KiboMascot variant="growth" size="xl" caption="Kibo: Scaling SMBs 24/7" />
-                <h3 className="text-2xl font-display font-bold text-paper">
-                  Meet Kibo, Your AI Growth Mascot
-                </h3>
-                <p className="text-sm text-text-dim">
-                  Whether automating midnight customer replies, routing kitchen tickets, or sending festive cashback alerts, Kibo ensures your business never sleeps.
-                </p>
-              </Card>
+              <div className="w-full max-w-lg p-8 sm:p-10 rounded-[32px] bg-gradient-to-br from-[#2c1342]/90 via-[#180a24]/85 to-[#0b0410]/95 border border-[#a855f7]/50 shadow-[0_20px_70px_-15px_rgba(168,85,247,0.35)] backdrop-blur-xl relative overflow-hidden group text-center space-y-6 transition-all duration-500 hover:border-[#a855f7] hover:shadow-[0_25px_80px_-10px_rgba(168,85,247,0.5)]">
+                {/* Concentric glass depth cues */}
+                <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#c084fc]/20 rounded-full blur-2xl pointer-events-none group-hover:bg-[#c084fc]/30 transition-all duration-700" />
+                <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#3b82f6]/20 rounded-full blur-2xl pointer-events-none group-hover:bg-[#3b82f6]/30 transition-all duration-700" />
+
+                <div className="relative z-10 transition-transform duration-500 group-hover:scale-[1.02]">
+                  <KiboMascot variant="growth" size="xl" caption="Kibo: Scaling SMBs 24/7" />
+                </div>
+                
+                <div className="space-y-3 relative z-10">
+                  <h3 className="text-2xl sm:text-3xl font-display font-bold text-white tracking-tight bg-gradient-to-r from-white via-paper to-indigo-2 bg-clip-text">
+                    Meet Kibo, Your AI Growth Mascot
+                  </h3>
+                  <p className="text-sm sm:text-base text-text-dim leading-relaxed">
+                    Whether automating midnight customer replies, routing kitchen tickets, or sending festive cashback alerts, Kibo ensures your business never sleeps.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
