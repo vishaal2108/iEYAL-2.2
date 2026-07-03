@@ -28,7 +28,7 @@ export const FounderCard: React.FC<FounderCardProps> = ({ profile, className }) 
           loading="lazy"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-transparent opacity-80" />
-        
+
         {/* Location badge on image */}
         <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-ink/80 backdrop-blur-sm border border-white/10 flex items-center gap-1.5 text-[11px] text-text-dim">
           <MapPin className="w-3 h-3 text-indigo-2" />
