@@ -29,7 +29,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   centered = false,
 }) => {
   return (
-    <section className={cn("relative pt-20 sm:pt-24 pb-8 md:pb-12 overflow-hidden min-h-screen flex items-center justify-center", className)}>
+    <section className={cn("relative pt-8 sm:pt-10 md:pt-12 pb-6 sm:pb-8 overflow-hidden min-h-[calc(100vh-72px)] flex items-center justify-center", className)}>
       {/* Ambient background glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-indigo/20 via-violet/25 to-cyan/15 rounded-full blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-10 right-10 w-96 h-96 bg-violet-deep/40 rounded-full blur-[100px] pointer-events-none -z-10" />
