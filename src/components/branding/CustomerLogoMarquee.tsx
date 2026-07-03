@@ -61,7 +61,10 @@ export const CustomerLogoMarquee: React.FC<CustomerLogoMarqueeProps> = ({
 
         {/* Row 2: Left to Right */}
         <div className="flex overflow-x-hidden relative">
-          <div className="flex items-center gap-6 sm:gap-8 md:gap-10 animate-marquee-reverse whitespace-nowrap hover:[animation-play-state:paused]">
+          <div
+            className="flex items-center gap-6 sm:gap-8 md:gap-10 animate-marquee [animation-direction:reverse] whitespace-nowrap hover:[animation-play-state:paused]"
+            style={{ animationDirection: 'reverse' }}
+          >
             {loopedRow2.map((logoUrl, index) => {
               const cleanName = logoUrl
                 .split('/')
