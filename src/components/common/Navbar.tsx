@@ -23,10 +23,12 @@ export const Navbar: React.FC<{ onOpenDemo: () => void }> = ({ onOpenDemo }) => 
   }, []);
 
   // Close mobile menu on route change
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
+  if (location.pathname !== prevPathname) {
+    setPrevPathname(location.pathname);
     setMobileMenuOpen(false);
     setActiveDropdown(null);
-  }, [location.pathname]);
+  }
 
   const getIcon = (name?: string) => {
     const cls = "w-4 h-4 text-indigo-2 shrink-0";
